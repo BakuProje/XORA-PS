@@ -2307,18 +2307,9 @@
       // localStorage.removeItem('xoraGtpsAgreed');
     });
 
-    /* Theme Detection & Toggle */
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.documentElement.classList.add('dark');
-    }
-
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-      if (event.matches) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    });
+    /* Theme Detection & Toggle - Default Dark Mode */
+    // Always set dark mode as default
+    document.documentElement.classList.add('dark');
 
     const themeToggle = document.getElementById('themeToggle');
     themeToggle.addEventListener('click', () => {
