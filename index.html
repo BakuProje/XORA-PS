@@ -1644,6 +1644,10 @@
           <img src="xoralogo.jpeg" alt="Xora Info" class="link-icon-logo">
           <span>Xora Info</span>
         </a>
+        <a href="#" class="link-button" data-link="xora-tutor">
+          <img src="xoralogo.jpeg" alt="Xora Tutor" class="link-icon-logo">
+          <span>Xora Tutor</span>
+        </a>
         <a href="https://chat.whatsapp.com/JZbVp8Ke6EX7obeRFlvDyO" class="link-button" data-link="group-whatsapp" target="_blank">
           <img src="assets/wa putih.svg" alt="WhatsApp" class="link-icon-svg">
           <span>Group Whatsapp</span>
@@ -2220,6 +2224,85 @@
     </div>
   </div>
 
+  <!-- Xora Tutor Modal -->
+  <div class="modal-overlay" id="xoraTutorModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">
+          <img src="xoralogo.jpeg" alt="Xora Tutor" class="emoji-icon" style="width: 28px; height: 28px; border-radius: 6px;">
+          <span>XORA TUTOR</span>
+        </h2>
+        <button class="modal-close" id="closeXoraTutorModal">✕</button>
+      </div>
+
+      <!-- Main View -->
+      <div id="tutorMainView">
+        <div class="host-grid">
+          <!-- PC/Laptop Tutor Button -->
+          <div class="host-item" onclick="showPcTutor()">
+            <img src="assets/windows.svg" alt="PC/Laptop" class="host-icon">
+            <div class="host-info">
+              <div class="host-name">PC/Laptop Tutor</div>
+              <div class="host-desc">Video tutorial untuk PC/Laptop</div>
+              <div class="host-action">👉 Klik untuk lihat video</div>
+            </div>
+          </div>
+
+          <!-- Android Tutor Button -->
+          <div class="host-item" onclick="showAndroidTutor()">
+            <img src="assets/android.svg" alt="Android" class="host-icon">
+            <div class="host-info">
+              <div class="host-name">Android Tutor</div>
+              <div class="host-desc">Video tutorial untuk Android</div>
+              <div class="host-action">👉 Klik untuk lihat video</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PC/Laptop Tutor View -->
+      <div id="pcTutorView" style="display: none;">
+        <div style="margin-bottom: 20px;">
+          <h3 style="color: var(--text-current); margin-bottom: 15px; text-align: center;">
+            <img src="assets/windows.svg" alt="PC/Laptop" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;">
+            Tutorial PC/Laptop
+          </h3>
+          <video controls style="width: 100%; border-radius: 12px; border: 2px solid var(--cartoon-stroke);">
+            <source src="assets/Windowstutor.mp4" type="video/mp4">
+            Browser Anda tidak mendukung video tag.
+          </video>
+        </div>
+
+        <!-- Back Button -->
+        <button class="modal-buy-button" onclick="showTutorMainView()" style="margin-top: 15px; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; border: 2px solid var(--cartoon-stroke);">
+          <span>⬅</span>
+          <span>Kembali</span>
+        </button>
+      </div>
+
+      <!-- Android Tutor View -->
+      <div id="androidTutorView" style="display: none;">
+        <div style="margin-bottom: 20px;">
+          <h3 style="color: var(--text-current); margin-bottom: 15px; text-align: center;">
+            <img src="assets/android.svg" alt="Android" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;">
+            Tutorial Android
+          </h3>
+          <div style="padding: 40px 20px; text-align: center; background: var(--bg-current); border: 2px solid var(--cartoon-stroke); border-radius: 12px;">
+            <div style="font-size: 48px; margin-bottom: 15px;">🎬</div>
+            <div style="font-size: 18px; font-weight: 600; color: var(--text-current); margin-bottom: 10px;">Video Menyusul</div>
+            <div style="font-size: 14px; color: var(--text-current); opacity: 0.7;">Tutorial Android akan segera tersedia</div>
+          </div>
+        </div>
+
+        <!-- Back Button -->
+        <button class="modal-buy-button" onclick="showTutorMainView()" style="margin-top: 15px; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; border: 2px solid var(--cartoon-stroke);">
+          <span>⬅</span>
+          <span>Kembali</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- Welcome Modal (First Visit) -->
   <div class="modal-overlay" id="welcomeModal" style="z-index: 10000;">
     <div class="modal-content">
@@ -2689,6 +2772,59 @@
         document.body.style.overflow = '';
       }
     });
+
+    /* ===== XORA TUTOR MODAL ===== */
+    const xoraTutorModal = document.getElementById('xoraTutorModal');
+    const closeXoraTutorModal = document.getElementById('closeXoraTutorModal');
+    const xoraTutorButton = document.querySelector('[data-link="xora-tutor"]');
+    const tutorMainView = document.getElementById('tutorMainView');
+    const pcTutorView = document.getElementById('pcTutorView');
+    const androidTutorView = document.getElementById('androidTutorView');
+
+    // Open Xora Tutor Modal
+    xoraTutorButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      showTutorMainView();
+      xoraTutorModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+
+    // Close Xora Tutor Modal
+    closeXoraTutorModal.addEventListener('click', () => {
+      xoraTutorModal.classList.remove('active');
+      document.body.style.overflow = '';
+      showTutorMainView();
+    });
+
+    // Close when clicking outside
+    xoraTutorModal.addEventListener('click', (e) => {
+      if (e.target === xoraTutorModal) {
+        xoraTutorModal.classList.remove('active');
+        document.body.style.overflow = '';
+        showTutorMainView();
+      }
+    });
+
+    // Show Tutor Main View
+    window.showTutorMainView = function() {
+      tutorMainView.style.display = 'block';
+      pcTutorView.style.display = 'none';
+      androidTutorView.style.display = 'none';
+    };
+
+    // Show PC Tutor View
+    window.showPcTutor = function() {
+      tutorMainView.style.display = 'none';
+      pcTutorView.style.display = 'block';
+      androidTutorView.style.display = 'none';
+    };
+
+    // Show Android Tutor View
+    window.showAndroidTutor = function() {
+      tutorMainView.style.display = 'none';
+      pcTutorView.style.display = 'none';
+      androidTutorView.style.display = 'block';
+    };
   </script>
 </body>
 </html>
