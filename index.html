@@ -1461,6 +1461,22 @@
       border: 2px solid var(--cartoon-stroke);
     }
 
+    .code-box[onclick] {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .code-box[onclick]:hover {
+      background: #2a2a2a;
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 0, 247, 0.3);
+    }
+
+    .code-box[onclick]:active {
+      transform: translateY(0);
+    }
+
     kbd {
       background: var(--bg-current);
       border: 2px solid var(--cartoon-stroke);
@@ -1915,7 +1931,10 @@
 
         <!-- Android Tutorial -->
         <div id="tutorialAndroid" class="tutorial-content">
-          <h3 class="tutorial-title">🤖 Panduan Android</h3>
+          <h3 class="tutorial-title">
+            <img src="assets/android.svg" alt="Android" style="width: 32px; height: 32px; vertical-align: middle; margin-right: 8px;">
+            Panduan Android
+          </h3>
           <div class="tutorial-steps">
             <div class="tutorial-step">
               <div class="step-number">1</div>
@@ -1952,7 +1971,10 @@
 
         <!-- iOS Tutorial -->
         <div id="tutorialIos" class="tutorial-content" style="display: none;">
-          <h3 class="tutorial-title">🍎 Panduan iOS (Surge 5)</h3>
+          <h3 class="tutorial-title">
+            <img src="assets/ios.svg" alt="iOS" style="width: 32px; height: 32px; vertical-align: middle; margin-right: 8px;">
+            Panduan iOS (Surge 5)
+          </h3>
           <div class="tutorial-steps">
             <div class="tutorial-step">
               <div class="step-number">1</div>
@@ -1989,7 +2011,10 @@
 
         <!-- Windows Tutorial -->
         <div id="tutorialWindows" class="tutorial-content" style="display: none;">
-          <h3 class="tutorial-title">🪟 Panduan Windows</h3>
+          <h3 class="tutorial-title">
+            <img src="assets/windows.svg" alt="Windows" style="width: 32px; height: 32px; vertical-align: middle; margin-right: 8px;">
+            Panduan Windows
+          </h3>
           <div class="tutorial-steps">
             <div class="tutorial-step">
               <div class="step-number">1</div>
@@ -1998,7 +2023,12 @@
             <div class="tutorial-step">
               <div class="step-number">2</div>
               <div class="step-content">
-                Ketik <code class="code-box">c:\\Windows\\System32\\drivers\\etc</code> lalu tekan Enter
+                Ketik 
+                <code class="code-box" onclick="copyToClipboard('C:\\Windows\\System32\\drivers\\etc', 'Path Windows')" style="cursor: pointer; transition: all 0.3s ease;">
+                  C:\Windows\System32\drivers\etc
+                </code> 
+                lalu tekan Enter
+                <div style="font-size: 11px; color: var(--primary); margin-top: 5px;">💡 Klik untuk menyalin path</div>
               </div>
             </div>
             <div class="tutorial-step">
@@ -2013,7 +2043,10 @@
               <div class="step-number">5</div>
               <div class="step-content">
                 Tambahkan ke bagian bawah file hosts:
-                <div class="code-box">15.235.166.218 www.growtopia1.com<br>15.235.166.218 www.growtopia2.com</div>
+                <div class="code-box" onclick="copyToClipboard('15.235.166.218 www.growtopia1.com\n15.235.166.218 www.growtopia2.com', 'Host entries')" style="cursor: pointer; transition: all 0.3s ease;">
+                  15.235.166.218 www.growtopia1.com<br>15.235.166.218 www.growtopia2.com
+                </div>
+                <div style="font-size: 11px; color: var(--primary); margin-top: 5px;">💡 Klik untuk menyalin host entries</div>
               </div>
             </div>
             <div class="tutorial-step">
