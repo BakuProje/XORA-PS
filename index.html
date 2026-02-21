@@ -1816,12 +1816,12 @@
             </div>
           </div>
 
-          <!-- Windows Host -->
+          <!-- Virtual Host -->
           <a href="xorahost.txt" class="host-item" download="xorahost.txt">
-            <img src="assets/windows.svg" alt="Windows" class="host-icon">
+            <img src="https://play-lh.googleusercontent.com/-3C_GP8rFSyU84jrnhrn4O5mPiqPj3XuyNhGh5L8z-G5Wk8snKtYtmZ7R0sCxsmXKGzL=w240-h480-rw" alt="Virtual Host" class="host-icon" style="object-fit: contain; padding: 8px;">
             <div class="host-info">
-              <div class="host-name">Windows Host</div>
-              <div class="host-desc">File host untuk Windows</div>
+              <div class="host-name">Virtual Host</div>
+              <div class="host-desc">File host untuk Android</div>
               <div class="host-action">⬇ Klik untuk download</div>
             </div>
           </a>
@@ -1840,8 +1840,8 @@
           <div class="host-item" onclick="copyToClipboard('https://gtpshost.com/ios/XoraPS-GH', 'iOS Host')">
             <img src="assets/ios.svg" alt="iOS" class="host-icon">
             <div class="host-info">
-              <div class="host-name">iOS Host</div>
-              <div class="host-desc">Copy link untuk iOS</div>
+              <div class="host-name">Iphone Host</div>
+              <div class="host-desc">Copy link untuk Iphone</div>
               <div class="host-action">📋 Klik untuk copy link</div>
             </div>
           </div>
@@ -1851,7 +1851,7 @@
             <img src="assets/tutor.svg" alt="Cara Bermain" class="host-icon">
             <div class="host-info">
               <div class="host-name">Cara Bermain</div>
-              <div class="host-desc">Panduan Android, iOS, dan Windows</div>
+              <div class="host-desc">Panduan Android, Iphone, dan Windows</div>
               <div class="host-action">👉 Klik untuk lihat panduan</div>
             </div>
           </div>
@@ -1925,7 +1925,7 @@
           </button>
           <button class="tutorial-tab" onclick="showTutorial('ios')">
             <img src="assets/ios.svg" alt="iOS" class="tab-icon">
-            <span>iOS</span>
+            <span>IPHONE</span>
           </button>
           <button class="tutorial-tab" onclick="showTutorial('windows')">
             <img src="assets/windows.svg" alt="Windows" class="tab-icon">
@@ -1977,7 +1977,7 @@
         <div id="tutorialIos" class="tutorial-content" style="display: none;">
           <h3 class="tutorial-title">
             <img src="assets/ios.svg" alt="iOS" style="width: 32px; height: 32px; vertical-align: middle; margin-right: 8px;">
-            Panduan iOS (Surge 5)
+            Panduan Iphone
           </h3>
           <div class="tutorial-steps">
             <div class="tutorial-step">
@@ -1992,7 +1992,7 @@
             <div class="tutorial-step">
               <div class="step-number">2</div>
               <div class="step-content">
-                <strong>KLIK INI LINK IOS SURGE 5</strong>
+                <strong>KLIK INI LINK IPHONE SURGE 5</strong>
                 <button class="tutorial-copy-btn" onclick="copyToClipboard('https://gtpshost.com/ios/XoraPS-GH', 'Link iOS Surge')">
                   📋 Copy Link
                 </button>
@@ -2243,7 +2243,7 @@
             <img src="assets/windows.svg" alt="PC/Laptop" class="host-icon">
             <div class="host-info">
               <div class="host-name">PC/Laptop Tutor</div>
-              <div class="host-desc">Video tutorial untuk PC/Laptop</div>
+              <div class="host-desc">Video tutorial Login untuk PC/Laptop</div>
               <div class="host-action">👉 Klik untuk lihat video</div>
             </div>
           </div>
@@ -2253,7 +2253,17 @@
             <img src="assets/android.svg" alt="Android" class="host-icon">
             <div class="host-info">
               <div class="host-name">Android Tutor</div>
-              <div class="host-desc">Video tutorial untuk Android</div>
+              <div class="host-desc">Video tutorial Login untuk Android</div>
+              <div class="host-action">👉 Klik untuk lihat video</div>
+            </div>
+          </div>
+
+          <!-- iOS Tutor Button -->
+          <div class="host-item" onclick="showIosTutor()">
+            <img src="assets/ios.svg" alt="iOS" class="host-icon">
+            <div class="host-info">
+              <div class="host-name">Iphone Tutor</div>
+              <div class="host-desc">Video tutorial Login untuk Iphone</div>
               <div class="host-action">👉 Klik untuk lihat video</div>
             </div>
           </div>
@@ -2282,16 +2292,93 @@
 
       <!-- Android Tutor View -->
       <div id="androidTutorView" style="display: none;">
+        <h3 style="color: var(--text-current); margin-bottom: 20px; text-align: center;">
+          <img src="assets/android.svg" alt="Android" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;">
+          Tutorial Android
+        </h3>
+
+        <div class="host-grid">
+          <!-- Virtual Host Tutor Button -->
+          <div class="host-item" onclick="showVirtualHostTutor()">
+            <img src="https://play-lh.googleusercontent.com/-3C_GP8rFSyU84jrnhrn4O5mPiqPj3XuyNhGh5L8z-G5Wk8snKtYtmZ7R0sCxsmXKGzL=w240-h480-rw" alt="Virtual Host" class="host-icon" style="object-fit: contain; padding: 8px;">
+            <div class="host-info">
+              <div class="host-name">Virtual Host Tutor</div>
+              <div class="host-desc">Tutorial Login Pakai Virtual Host</div>
+              <div class="host-action">👉 Klik untuk lihat video</div>
+            </div>
+          </div>
+
+          <!-- Power Tunnel Tutor Button -->
+          <div class="host-item" onclick="showPowerTunnelTutor()">
+            <img src="https://raw.githubusercontent.com/krlvm/PowerTunnel/master/.github/images/logo.png" alt="Power Tunnel" class="host-icon">
+            <div class="host-info">
+              <div class="host-name">Power Tunnel Tutor</div>
+              <div class="host-desc">Tutorial Login Pakai Power Tunnel</div>
+              <div class="host-action">👉 Klik untuk lihat video</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Back Button -->
+        <button class="modal-buy-button" onclick="showTutorMainView()" style="margin-top: 15px; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; border: 2px solid var(--cartoon-stroke);">
+          <span>⬅</span>
+          <span>Kembali</span>
+        </button>
+      </div>
+
+      <!-- Virtual Host Tutor View -->
+      <div id="virtualHostTutorView" style="display: none;">
         <div style="margin-bottom: 20px;">
           <h3 style="color: var(--text-current); margin-bottom: 15px; text-align: center;">
-            <img src="assets/android.svg" alt="Android" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;">
-            Tutorial Android
+            <img src="https://play-lh.googleusercontent.com/-3C_GP8rFSyU84jrnhrn4O5mPiqPj3XuyNhGh5L8z-G5Wk8snKtYtmZ7R0sCxsmXKGzL=w240-h480-rw" alt="Virtual Host" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px; object-fit: contain;">
+            Tutorial Virtual Host
           </h3>
           <div style="padding: 40px 20px; text-align: center; background: var(--bg-current); border: 2px solid var(--cartoon-stroke); border-radius: 12px;">
             <div style="font-size: 48px; margin-bottom: 15px;">🎬</div>
             <div style="font-size: 18px; font-weight: 600; color: var(--text-current); margin-bottom: 10px;">Video Menyusul</div>
-            <div style="font-size: 14px; color: var(--text-current); opacity: 0.7;">Tutorial Android akan segera tersedia</div>
+            <div style="font-size: 14px; color: var(--text-current); opacity: 0.7;">Tutorial Virtual Host akan segera tersedia</div>
           </div>
+        </div>
+
+        <!-- Back Button -->
+        <button class="modal-buy-button" onclick="showAndroidTutor()" style="margin-top: 15px; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; border: 2px solid var(--cartoon-stroke);">
+          <span>⬅</span>
+          <span>Kembali</span>
+        </button>
+      </div>
+
+      <!-- Power Tunnel Tutor View -->
+      <div id="powerTunnelTutorView" style="display: none;">
+        <div style="margin-bottom: 20px;">
+          <h3 style="color: var(--text-current); margin-bottom: 15px; text-align: center;">
+            <img src="https://raw.githubusercontent.com/krlvm/PowerTunnel/master/.github/images/logo.png" alt="Power Tunnel" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;">
+            Tutorial Power Tunnel
+          </h3>
+          <div style="padding: 40px 20px; text-align: center; background: var(--bg-current); border: 2px solid var(--cartoon-stroke); border-radius: 12px;">
+            <div style="font-size: 48px; margin-bottom: 15px;">🎬</div>
+            <div style="font-size: 18px; font-weight: 600; color: var(--text-current); margin-bottom: 10px;">Video Menyusul</div>
+            <div style="font-size: 14px; color: var(--text-current); opacity: 0.7;">Tutorial Power Tunnel akan segera tersedia</div>
+          </div>
+        </div>
+
+        <!-- Back Button -->
+        <button class="modal-buy-button" onclick="showAndroidTutor()" style="margin-top: 15px; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; border: 2px solid var(--cartoon-stroke);">
+          <span>⬅</span>
+          <span>Kembali</span>
+        </button>
+      </div>
+
+      <!-- iOS Tutor View -->
+      <div id="iosTutorView" style="display: none;">
+        <div style="margin-bottom: 20px;">
+          <h3 style="color: var(--text-current); margin-bottom: 15px; text-align: center;">
+            <img src="assets/ios.svg" alt="iOS" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;">
+            Tutorial Iphone
+          </h3>
+          <video controls style="width: 100%; border-radius: 12px; border: 2px solid var(--cartoon-stroke);">
+            <source src="assets/iptutor.mp4" type="video/mp4">
+            Browser Anda tidak mendukung video tag.
+          </video>
         </div>
 
         <!-- Back Button -->
@@ -2780,6 +2867,9 @@
     const tutorMainView = document.getElementById('tutorMainView');
     const pcTutorView = document.getElementById('pcTutorView');
     const androidTutorView = document.getElementById('androidTutorView');
+    const iosTutorView = document.getElementById('iosTutorView');
+    const virtualHostTutorView = document.getElementById('virtualHostTutorView');
+    const powerTunnelTutorView = document.getElementById('powerTunnelTutorView');
 
     // Open Xora Tutor Modal
     xoraTutorButton.addEventListener('click', (e) => {
@@ -2810,6 +2900,9 @@
       tutorMainView.style.display = 'block';
       pcTutorView.style.display = 'none';
       androidTutorView.style.display = 'none';
+      iosTutorView.style.display = 'none';
+      virtualHostTutorView.style.display = 'none';
+      powerTunnelTutorView.style.display = 'none';
     };
 
     // Show PC Tutor View
@@ -2817,6 +2910,9 @@
       tutorMainView.style.display = 'none';
       pcTutorView.style.display = 'block';
       androidTutorView.style.display = 'none';
+      iosTutorView.style.display = 'none';
+      virtualHostTutorView.style.display = 'none';
+      powerTunnelTutorView.style.display = 'none';
     };
 
     // Show Android Tutor View
@@ -2824,6 +2920,39 @@
       tutorMainView.style.display = 'none';
       pcTutorView.style.display = 'none';
       androidTutorView.style.display = 'block';
+      iosTutorView.style.display = 'none';
+      virtualHostTutorView.style.display = 'none';
+      powerTunnelTutorView.style.display = 'none';
+    };
+
+    // Show iOS Tutor View
+    window.showIosTutor = function() {
+      tutorMainView.style.display = 'none';
+      pcTutorView.style.display = 'none';
+      androidTutorView.style.display = 'none';
+      iosTutorView.style.display = 'block';
+      virtualHostTutorView.style.display = 'none';
+      powerTunnelTutorView.style.display = 'none';
+    };
+
+    // Show Virtual Host Tutor View
+    window.showVirtualHostTutor = function() {
+      tutorMainView.style.display = 'none';
+      pcTutorView.style.display = 'none';
+      androidTutorView.style.display = 'none';
+      iosTutorView.style.display = 'none';
+      virtualHostTutorView.style.display = 'block';
+      powerTunnelTutorView.style.display = 'none';
+    };
+
+    // Show Power Tunnel Tutor View
+    window.showPowerTunnelTutor = function() {
+      tutorMainView.style.display = 'none';
+      pcTutorView.style.display = 'none';
+      androidTutorView.style.display = 'none';
+      iosTutorView.style.display = 'none';
+      virtualHostTutorView.style.display = 'none';
+      powerTunnelTutorView.style.display = 'block';
     };
   </script>
 </body>
